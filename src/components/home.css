@@ -1,0 +1,36 @@
+.about-us-container {
+  margin-top: 10rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-us-back {
+  object-fit: cover;
+  height: 50%;
+  width: auto;
+}
+
+.about-us-info {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  display: flex;
+}
+
+.about-us-info img {
+  width: 30%;
+  height: auto;
+  margin: 4rem;
+}
+
+.about-us-info {
+  text-align: justify;
+  color: white;
+  font-size: 2rem;
+  padding: 4rem;
+}
+
+.darkner {
+  filter: invert(0%) sepia(1%) saturate(50%) hue-rotate(335deg) brightness(55%)
+    contrast(200%);
+}
