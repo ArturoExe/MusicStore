@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/navBar";
 import Home from "./components/home";
 import Cart from "./components/cart";
+import Catalog from "./components/catalog";
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/home" element={<Home />}></Route>
+
           <Route path="/cart" element={<Cart />}></Route>
-          {/* <Route path="/catalog" element={<Catalog />}></Route>
-          <Route path="/cart" element={<Cart />}></Route> */}
+          <Route path="/catalog" element={<Catalog />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

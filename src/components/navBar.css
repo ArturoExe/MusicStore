@@ -42,3 +42,7 @@ i {
 .hamburguer-menu {
   display: none;
 }
+
+.red-letters {
+  color: red;
+}

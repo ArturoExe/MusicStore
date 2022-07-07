@@ -1,13 +1,59 @@
 import "./home.css";
-import Hero from "./hero";
-import MostPopular from "./mostPopular";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
     <div>
-      <Hero />
-      <MostPopular></MostPopular>
+      <div>
+        <div className="hero-container">
+          <Link to="/register">
+            <button className="hero-button">Get Involved</button>
+          </Link>
+          <h2>Music Center</h2>
+          <h4>The real deal</h4>
+          <img src="../img/about.jpg" className="hero-image" alt=""></img>
+        </div>
+      </div>
 
+      <div>
+        <div class="hero-section">
+          <div class="image-container">
+            <a href="#">
+              <img src="img\fender.png" class="overlay" alt="" />
+            </a>
+          </div>
+
+          <div class="image-container">
+            <a href="#">
+              <img src="img\shure.jpg" class="overlay" alt="" />
+            </a>
+          </div>
+
+          <div class="image-container">
+            <a href="#">
+              <img src="img\ibanez.png" class="overlay" alt="" />
+            </a>
+          </div>
+
+          <div class="image-container">
+            <a href="#" class="i">
+              <img src="img\marshall.jpg" class="overlay" alt="" />
+            </a>
+          </div>
+
+          <div class="image-container">
+            <a href="#" class="i">
+              <img src="img\schecter.jpg" class="overlay" alt="" />
+            </a>
+          </div>
+
+          <div class="image-container">
+            <a href="#" class="i">
+              <img src="img\orange.png" class="overlay" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
       <div className="about-us-container">
         <img
           src="../img/back.jpg"
@@ -16,7 +62,7 @@ export const Home = () => {
         />
 
         <div className="about-us-info">
-          <img src="./img/girl-guitar.jpg"></img>
+          <img src="./img/girl-guitar.jpg" alt=""></img>
           <div>
             <h4>About Us</h4>
             <p>
@@ -28,6 +74,39 @@ export const Home = () => {
           </div>
         </div>
       </div>
+
+      <footer className="footer-container">
+        <div className="footer-categories">
+          <h3>Categories</h3>
+          <ul>
+            <li>Instruments</li>
+            <li>Vinyls and CD's</li>
+            <li>Accesories</li>
+            <li>Lessons</li>
+            <li>Repairs</li>
+            <li>Rentals</li>
+          </ul>
+        </div>
+
+        <div className="footer-intouch">
+          <h3>Get in touch</h3>
+          <p>
+            Any questions? Let us know in store at 8th floor, 379 Hudson St, New
+            York, NY 10018 or call us on (+1) 96 716 6879
+          </p>
+        </div>
+
+        <div className="footer-controller">
+          <input type="text" placeholder="email@example.com" />
+          <button>SUBSCRIBE</button>
+          <div></div>
+        </div>
+
+        <p className="rights">
+          Copyright ©2022 All rights reserved. This template is made with by
+          memo and arturo
+        </p>
+      </footer>
     </div>
   );
 };
