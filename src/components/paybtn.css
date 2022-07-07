@@ -1,31 +1,30 @@
 .button-32 {
-    background-color: #fff000;
-    border-radius: 12px;
-    color: #000;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 10px 15px;
-    text-align: center;
-    transition: 200ms;
-    width: 100%;
-    box-sizing: border-box;
-    border: 0;
-    font-size: 16px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+  background-color: #fff000;
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 
-    margin-top: 10px;
-    color: black;
-    padding: 5px;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
+  color: black;
+  padding: 5px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 
-    width: 500px;
-    font-size: large;
+   width: 500px;
+  font-size: large;
   }
   
   .button-32:not(:disabled):hover,

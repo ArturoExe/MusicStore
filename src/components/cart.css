@@ -12,8 +12,8 @@
 .payment-container{
     background-color: rgb(30, 95, 116);
     border-radius: 25px;
-    position: relative ;
-    left: 200px;
+    position: absolute;
+    left: 60%;
     width: 50%;
     float: right;
     color: white;
@@ -81,23 +81,22 @@
 }
 
 
-.payment-container h2, .payment-container p{
+/* .payment-container h2, .payment-container p{
     text-align: left;
-    margin-left: 350px;
+    margin-left: 15px;
 
     
-}
+} */
 
-.card-info{
+/* .card-info{
     text-align: left;
     margin-left: 200px;
     font-size: 20px;
 
-    float: left;
-    display: block;
+    
     margin-left: 15px;
     margin-top: 15px;
-}
+} */
 
 .email-input, .cardholder-input{
     margin-top: 10px;
@@ -151,6 +150,7 @@
     border-radius: 7px;
     
 }
+
 .billing-state{
     margin-top: 0px;
     margin-bottom: 15px;
@@ -172,32 +172,9 @@
     border-radius: 7px;
 }
 
-.totals{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+/* .totals{
     width: 100px;
     height: 200px;
 
     text-align: right;
-}
-
-.pay-btn{
-    margin-top: 10px;
-    background-color: white;
-    border-style: hidden;
-    color: black;
-    padding: 5px;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-
-    width: 500px;
-    font-size: large;
-}
-.pay-btn:hover{
-    cursor: pointer;
-    background-color: #C5C5C5;
-}
+} */
