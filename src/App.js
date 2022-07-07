@@ -16,6 +16,8 @@ function App() {
 
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/catalog" element={<Catalog />}></Route>
+
+          {/* <Route path="/cart" element={<Cart />}></Route> */}
         </Routes>
       </BrowserRouter>
     </div>
