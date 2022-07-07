@@ -1,0 +1,7 @@
+.vertical-div {
+    border-right: 2px solid gray;
+    width: 25%;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.75) inset;
+}

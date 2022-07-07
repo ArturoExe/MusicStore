@@ -1,0 +1,203 @@
+.summary-container{
+    width: 50%;
+    float: left;
+
+    margin-top: 70px;
+}
+.summary-container h2, p{
+    text-align: left;
+    margin-left: 400px;
+}
+
+.payment-container{
+    background-color: rgb(30, 95, 116);
+    border-radius: 25px;
+    position: relative ;
+    left: 200px;
+    width: 50%;
+    float: right;
+    color: white;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+
+    margin-top: 70px;
+}
+
+
+
+.normal-shipping, .fast-shipping{
+    border: 1px solid rgb(181, 181, 181);
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+
+    box-sizing: border-box;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 530px;
+    height: 115px;
+
+    font-size: 18px;
+    padding-top: 30px;
+    text-align: left;
+    
+}
+.normal-shipping span, .fast-shipping span{
+    color: gray;
+    margin-left: 25px;
+}
+.normal-shipping label, .fast-shipping label{
+    margin-left: 20px;
+
+    float: left;
+    display: block;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.normal-shipping input, .fast-shipping input{
+    height: 40px;
+    width: 40px;
+    margin-right: 25px;
+    margin-left: 270px;
+
+    float: right;
+    display: block;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.normal-shipping p, .fast-shipping p{
+    
+    float: left;
+    display: block;
+    margin-left: 250px;
+    margin-top: 25px;
+}
+
+
+.payment-container h2, .payment-container p{
+    text-align: left;
+    margin-left: 350px;
+
+    
+}
+
+.card-info{
+    text-align: left;
+    margin-left: 200px;
+    font-size: 20px;
+
+    float: left;
+    display: block;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.email-input, .cardholder-input{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 300px;
+    height: 25px;
+
+    background: #FFFFFF;
+    border: 1px solid #C5C5C5;
+    border-radius: 7px;
+}
+
+.card-number{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 150px;
+    height: 25px;
+
+    background: #FFFFFF;
+    border: 1px solid #C5C5C5;
+    border-radius: 7px;
+}
+.card-expdate{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 60px;
+    height: 25px;
+
+    background: #FFFFFF;
+    border: 1px solid #C5C5C5;
+    border-radius: 7px;
+}
+.card-cvc{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 80px;
+    height: 25px;
+
+    background: #FFFFFF;
+    border: 1px solid #C5C5C5;
+    border-radius: 7px;
+}
+.billing-address{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width: 300px;
+    height: 25px;
+
+    background: #FFFFFF;
+    border: 1px solid #C5C5C5;
+    border-radius: 7px;
+    
+}
+.billing-state{
+    margin-top: 0px;
+    margin-bottom: 15px;
+    width: 147px;
+    height: 25px;
+
+    background: #FFFFFF;
+    border: 1px solid #C5C5C5;
+    border-radius: 7px;
+}
+.billing-zipcode{
+    margin-top: 0px;
+    margin-bottom: 15px;
+    width: 147px;
+    height: 25px;
+
+    background: #FFFFFF;
+    border: 1px solid #C5C5C5;
+    border-radius: 7px;
+}
+
+.totals{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 200px;
+
+    text-align: right;
+}
+
+.pay-btn{
+    margin-top: 10px;
+    background-color: white;
+    border-style: hidden;
+    color: black;
+    padding: 5px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+
+    width: 500px;
+    font-size: large;
+}
+.pay-btn:hover{
+    cursor: pointer;
+    background-color: #C5C5C5;
+}
