@@ -13,7 +13,7 @@
     background-color: rgb(30, 95, 116);
     border-radius: 25px;
     position: absolute;
-    left: 60%;
+    left: 65%;
     width: 50%;
     float: right;
     color: white;
@@ -23,6 +23,8 @@
     -o-border-radius: 25px;
 
     margin-top: 70px;
+
+    height: 80%;
 }
 
 
@@ -81,100 +83,163 @@
 }
 
 
-/* .payment-container h2, .payment-container p{
+.payment-container h2, .payment-container p{
     text-align: left;
-    margin-left: 15px;
+    margin-left: 150px;
 
     
-} */
+} 
 
-/* .card-info{
+.card-info{
     text-align: left;
     margin-left: 200px;
     font-size: 20px;
 
     
-    margin-left: 15px;
+    margin-left: 150px;
     margin-top: 15px;
-} */
+}
 
 .email-input, .cardholder-input{
     margin-top: 10px;
     margin-bottom: 15px;
-    width: 300px;
-    height: 25px;
+    width: 400px;
+    height: 30px;
 
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
     border-radius: 7px;
+
+    text-align: center;
 }
 
 .card-number{
     margin-top: 10px;
     margin-bottom: 15px;
-    width: 150px;
+    width: 290px;
     height: 25px;
 
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
-    border-radius: 7px;
+    border-radius: 7px 0px 0px 7px;
+
+    text-align: center;
+    font-size: 10px;
 }
 .card-expdate{
     margin-top: 10px;
     margin-bottom: 15px;
-    width: 60px;
+    width: 50px;
     height: 25px;
-
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
-    border-radius: 7px;
+    border-radius: 0px;
+    font-size: 10px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
 }
 .card-cvc{
     margin-top: 10px;
     margin-bottom: 15px;
-    width: 80px;
+    width: 50px;
     height: 25px;
-
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
-    border-radius: 7px;
+    border-radius: 0px 7px 7px 0px;
+    font-size: 10px;
+    -webkit-border-radius: 0px 7px 7px 0px;
+    -moz-border-radius: 0px 7px 7px 0px;
+    -ms-border-radius: 0px 7px 7px 0px;
+    -o-border-radius: 0px 7px 7px 0px;
 }
 .billing-address{
     margin-top: 10px;
     margin-bottom: 0px;
-    width: 300px;
+    width: 250px;
     height: 25px;
-
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
-    border-radius: 7px;
-    
+    border-radius: 0px 7px 7px 0px;
+    text-align: center;
+    -webkit-border-radius: 0px 7px 0px 0px;
+    -moz-border-radius: 0px 7px 7px 0px;
+    -ms-border-radius: 0px 7px 7px 0px;
+    -o-border-radius: 0px 7px 7px 0px;
 }
 
 .billing-state{
     margin-top: 0px;
-    margin-bottom: 15px;
-    width: 147px;
+    width: 220px;
     height: 25px;
-
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
-    border-radius: 7px;
+    border-radius: 0px 0px 0px 7px;
+    text-align: center;
+    -webkit-border-radius: 0px 0px 0px 7px;
+    -moz-border-radius: 0px 0px 0px 7px;
+    -ms-border-radius: 0px 0px 0px 7px;
+    -o-border-radius: 0px 0px 0px 7px;
 }
 .billing-zipcode{
     margin-top: 0px;
-    margin-bottom: 15px;
-    width: 147px;
+    width: 175px;
     height: 25px;
-
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
-    border-radius: 7px;
+    border-radius: 0px 0px 7px 0px;
+    text-align: center;
+    -webkit-border-radius: 0px 0px 7px 0px;
+    -moz-border-radius: 0px 0px 7px 0px;
+    -ms-border-radius: 0px 0px 7px 0px;
+    -o-border-radius: 0px 0px 7px 0px;
 }
 
-/* .totals{
-    width: 100px;
-    height: 200px;
 
-    text-align: right;
-} */
+
+
+
+
+.at-icon{
+    position: absolute;
+    color: #8B8B8B;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.card-icon{
+    position: absolute;
+    color: #8B8B8B;
+    margin-top: 10px;
+    margin-left: 5px;
+
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+}
+.name-icon{
+    position: absolute;
+    color: #8B8B8B;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+.totals-text{
+    float: left;
+    text-align: left;
+    margin-left: 150px;
+
+}
+.totals-res{
+    text-align: left;
+    margin-left: 450px;
+}
