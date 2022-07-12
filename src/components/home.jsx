@@ -54,6 +54,7 @@ export const Home = () => {
           </div>
         </div>
       </div>
+
       <div className="about-us-container">
         <img
           src="../img/back.jpg"
@@ -63,6 +64,7 @@ export const Home = () => {
 
         <div className="about-us-info">
           <img src="./img/girl-guitar.jpg" alt=""></img>
+
           <div>
             <h4>About Us</h4>
             <p>

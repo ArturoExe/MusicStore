@@ -86,6 +86,7 @@ h1 {
 
 .about-us-back {
   object-fit: cover;
+  height: 50%;
   width: auto;
 }
 

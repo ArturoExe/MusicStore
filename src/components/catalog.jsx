@@ -37,6 +37,7 @@ const Catalog = () => {
         ))}
       </div>
     </div>
+
   );
 };
 
