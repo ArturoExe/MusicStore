@@ -54,3 +54,8 @@
 .profile-container{
     display: flex;
 }
+
+.my-details h3{
+    margin-left: 70px;
+    margin-top: -30px;
+}
