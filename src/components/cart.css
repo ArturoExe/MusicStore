@@ -1,7 +1,8 @@
 .summary-container {
   width: 50%;
-  float: left;
   margin-top: 70px;
+  float: left;
+  overflow: hidden;
 }
 .summary-container h2,
 .summary-container p {
@@ -102,7 +103,7 @@
 .cardholder-input {
   margin-top: 10px;
   margin-bottom: 15px;
-  width: 400px;
+  width: 380px;
   height: 30px;
 
   background: #ffffff;
@@ -115,7 +116,7 @@
 .card-number {
   margin-top: 10px;
   margin-bottom: 15px;
-  width: 290px;
+  width: 266px;
   height: 25px;
 
   background: #ffffff;
@@ -156,7 +157,7 @@
 .billing-address {
   margin-top: 10px;
   margin-bottom: 0px;
-  width: 250px;
+  width: 258px;
   height: 25px;
   background: #ffffff;
   border: 1px solid #c5c5c5;
@@ -170,7 +171,7 @@
 
 .billing-state {
   margin-top: 0px;
-  width: 220px;
+  width: 200px;
   height: 25px;
   background: #ffffff;
   border: 1px solid #c5c5c5;
@@ -183,7 +184,7 @@
 }
 .billing-zipcode {
   margin-top: 0px;
-  width: 175px;
+  width: 172px;
   height: 25px;
   background: #ffffff;
   border: 1px solid #c5c5c5;
@@ -225,7 +226,6 @@
   text-align: left;
   margin-left: 150px;
 }
-
 .totals-res {
   text-align: left;
   margin-left: 450px;
