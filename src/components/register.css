@@ -1,8 +1,8 @@
-form{
+.register-container form{
     display: inline-block;
 }
 
-input[type=text] {
+.register-container input[type=text] {
     background: transparent;
     border: none;
     border-bottom: 3px #4e4e4e solid; 
@@ -12,7 +12,7 @@ input[type=text] {
     letter-spacing: 3px;
 }
 
-body {
+.register-container body {
     text-align: center;
 }
 
@@ -27,7 +27,7 @@ body {
     margin-left: 210px;
 }
 
-h4{
+.register-container h4{
     letter-spacing: 2px;
     font-size: 20px;
 }

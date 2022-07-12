@@ -1,8 +1,8 @@
-form{
+.login-container form{
     display: inline-block;
 }
 
-input[type=text] {
+.login-container input[type=text] {
     background: transparent;
     border: none;
     border-bottom: 3px #4e4e4e solid; 
@@ -12,11 +12,11 @@ input[type=text] {
     letter-spacing: 3px;
 }
 
-body {
+.login-container body {
     text-align: center;
 }
 
-h4{
+.login-container h4{
     letter-spacing: 2px;
 }
 
@@ -34,7 +34,7 @@ h4{
     padding: 5px;
 }
 
-img{
+.login-container img{
     width: 325px;
 }
 

@@ -4,7 +4,7 @@
 
     margin-top: 70px;
 }
-.summary-container h2, p{
+.summary-container h2, .summary-container p{
     text-align: left;
     margin-left: 400px;
 }
