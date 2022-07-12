@@ -1,8 +1,6 @@
 .summary-container {
   width: 50%;
   margin-top: 70px;
-  float: left;
-  overflow: hidden;
 }
 .summary-container h2,
 .summary-container p {
@@ -10,21 +8,22 @@
   margin-left: 400px;
 }
 
+.cart-container {
+  display: flex;
+  overflow-x: hidden;
+}
+
 .payment-container {
   background-color: rgb(30, 95, 116);
   border-radius: 25px;
-  position: absolute;
-  left: 65%;
   width: 50%;
-  float: right;
   color: white;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   -ms-border-radius: 25px;
   -o-border-radius: 25px;
-
   margin-top: 70px;
-
+  transform: translateX(30px);
   height: 80%;
 }
 
