@@ -22,11 +22,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
-<<<<<<< HEAD
-=======
           <Route path="/my-orders" element={<Orders />}></Route>
-          {/* <Route path="/cart" element={<Cart />}></Route> */}
->>>>>>> 1b2c8ae3b94f614f202eeb2e3593a9c122e08917
         </Routes>
       </BrowserRouter>
     </div>
