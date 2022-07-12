@@ -1,7 +1,6 @@
 import "./cart.css";
 import Country from "./country";
 import Cartprod from "./cartprod";
-import Paybtn from "./paybtn";
 
 import { MdAlternateEmail } from "react-icons/md";
 import { BsFillCreditCard2BackFill } from "react-icons/bs";
@@ -62,7 +61,7 @@ export const Cart = () => {
                     <h4>$ 200</h4>
                     <h4>$ 1200</h4>
                 </div>
-                <Paybtn></Paybtn>
+                <button class="button-80" role="button">Pay $1200</button>
             </div>
       </div>
     );

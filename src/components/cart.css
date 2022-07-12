@@ -1,3 +1,7 @@
+
+.cart-container{
+    overflow: hidden;
+}
 .summary-container{
     width: 50%;
     float: left;
@@ -6,24 +10,22 @@
 }
 .summary-container h2, p{
     text-align: left;
-    margin-left: 400px;
+    margin-left: 200px;
 }
 
 .payment-container{
     background-color: rgb(30, 95, 116);
-    border-radius: 25px;
+    border-radius: 25px 0px 0px 25px;
     position: absolute;
     left: 65%;
-    width: 50%;
+    width: 35%;
     float: right;
     color: white;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
-
+    -webkit-border-radius: 25px 0px 0px 25px;
+    -moz-border-radius: 25px 0px 0px 25px;
+    -ms-border-radius: 25px 0px 0px 25px;
+    -o-border-radius: 25px 0px 0px 25px;
     margin-top: 70px;
-
     height: 80%;
 }
 
@@ -104,7 +106,7 @@
     margin-top: 10px;
     margin-bottom: 15px;
     width: 380px;
-    height: 30px;
+    height: 25px;
 
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
@@ -113,10 +115,14 @@
     text-align: center;
 }
 
+.card-detail{
+    width: 380px;
+}
+
 .card-number{
     margin-top: 10px;
     margin-bottom: 15px;
-    width: 266px;
+    width: 275px;
     height: 25px;
 
     background: #FFFFFF;
@@ -129,7 +135,7 @@
 .card-expdate{
     margin-top: 10px;
     margin-bottom: 15px;
-    width: 50px;
+    width: 45px;
     height: 25px;
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
@@ -143,7 +149,7 @@
 .card-cvc{
     margin-top: 10px;
     margin-bottom: 15px;
-    width: 50px;
+    width: 40px;
     height: 25px;
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
@@ -154,6 +160,11 @@
     -ms-border-radius: 0px 7px 7px 0px;
     -o-border-radius: 0px 7px 7px 0px;
 }
+
+.billing-adress-info{
+    width: 400px;
+}
+
 .billing-address{
     margin-top: 10px;
     margin-bottom: 0px;
@@ -242,4 +253,82 @@
 .totals-res{
     text-align: left;
     margin-left: 450px;
+}
+
+
+
+
+
+
+
+
+.button-80 {
+  background: #fff;
+  backface-visibility: hidden;
+  border-radius: .375rem;
+  border-style: solid;
+  border-width: .125rem;
+  box-sizing: border-box;
+  color: #212121;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,Helvetica,sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.3;
+  padding: .875rem 1.125rem;
+  position: relative;
+  text-decoration: none;
+  transform: translateZ(0) scale(1);
+  transition: transform .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  margin-top: 20px;
+  -webkit-border-radius: .375rem;
+  -moz-border-radius: .375rem;
+  -ms-border-radius: .375rem;
+  -o-border-radius: .375rem;
+}
+
+.button-80:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.button-80:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
+  -webkit-transform: scale(1.05) translateY(.125rem);
+  -moz-transform: scale(1.05) translateY(.125rem);
+  -ms-transform: scale(1.05) translateY(.125rem);
+  -o-transform: scale(1.05) translateY(.125rem);
+}
+
+.button-80:focus {
+  outline: 0 solid transparent;
+}
+
+.button-80:focus:before {
+  content: "";
+  left: calc(-1*.375rem);
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1*.375rem);
+  transition: border-radius;
+  user-select: none;
+}
+
+.button-80:focus:not(:focus-visible) {
+  outline: 0 solid transparent;
+}
+
+.button-80:focus:not(:focus-visible):before {
+  border-width: 0;
+}
+
+.button-80:not(:disabled):active {
+  transform: translateY(.125rem);
 }
