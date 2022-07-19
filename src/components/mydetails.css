@@ -1,0 +1,23 @@
+.mydetails-container{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.mydetails-option{
+    border: 1px solid black;
+    display: block;
+    overflow: auto;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.mydetails-option h3{
+    margin: auto;
+    background-color: #d1d1d1;
+}
+
+.mydetails-option a{
+    margin: 10px
+}

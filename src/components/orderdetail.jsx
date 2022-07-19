@@ -8,7 +8,7 @@ export const Orderdetail = () => {
                     <h3>Rickenbacker 4001</h3>
                     <h5>Total: $2200</h5>
                 </div>
-                <img src="img/rickenbacker.jpg" alt="Rickenbacker 4001"/>
+                <img src="/img/rickenbacker.jpg" alt="Rickenbacker 4001"/>
             </div>
 
             <div className="delivery-status-options">

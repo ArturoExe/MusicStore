@@ -8,6 +8,7 @@ import Login from "./components/login";
 import Register from "./components/register";
 import Profile from "./components/profile";
 import Orders from "./components/orders";
+import Details from "./components/mydetails";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/my-orders" element={<Orders />}></Route>
+          <Route path="/my-details" element={<Details />}></Route>
           {/* <Route path="/cart" element={<Cart />}></Route> */}
         </Routes>
       </BrowserRouter>
