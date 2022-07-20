@@ -1,13 +1,17 @@
-import "./cartprod.css";
+import "../styles/cartprod.css";
 
-export const Cartprod = () => {
+export const Cartprod = ({ cartprod, handleRemove }) => {
+  function handleValue() {
+    handleRemove(cartprod.id);
+  }
+
   return (
     <div className="cart-items-container">
-                        <img src="img/Epiphone350s.png" alt="Epiphone 350s"/>
-                        <h5>Epiphone 350s, Cherry color, Hummbucker pickups </h5>
-                        <h4>$180</h4>
-                        <button>Remove</button>
-                    </div>
+      <img src={cartprod.image_url} alt="Epiphone 350s" />
+      <h5>{cartprod.name}</h5>
+      <h4>$ {cartprod.price}</h4>
+      <button onClick={handleValue}>Remove</button>
+    </div>
   );
 };
 

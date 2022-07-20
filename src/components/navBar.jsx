@@ -1,7 +1,37 @@
-import "./navBar.css";
+import "../styles/navBar.css";
 import { Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import CounterContext from "../context/CounterContext";
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
 
 const NavBar = () => {
+  const { counter } = useContext(CounterContext);
+  const { user } = useContext(AuthContext);
+  function handleNavBar() {
+    if (user) {
+      return (
+        <>
+          <Link to="/profile">profile</Link>
+
+          <Link to="/catalog">Catalog</Link>
+
+          <Link to="/cart">
+            <AiOutlineShoppingCart className="cart-icon" />
+            {counter}
+            Cart
+          </Link>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <Link to="/login">Login</Link>
+        </>
+      );
+    }
+  }
+
   return (
     <nav>
       <div>
@@ -10,21 +40,16 @@ const NavBar = () => {
         </Link>
       </div>
 
-      <div class="hamburguer-menu">
-        <i class="fas fa-bars"></i>
+      <div className="hamburguer-menu">
+        <i className="fas fa-bars"></i>
       </div>
 
-      <div class="search">
-        <i class="fa-solid fa-magnifying-glass"></i>
+      <div className="search">
+        <i className="fa-solid fa-magnifying-glass"></i>
         <input type="text" placeholder="Search.." />
       </div>
 
-      <div class="normal-menu">
-        <a href="home">Home</a>
-        <a href="catalog">Catalog</a>
-        <a href="cart">Cart</a>
-        <a href="login">Login</a>
-      </div>
+      <div className="normal-menu">{handleNavBar()}</div>
     </nav>
   );
 };

@@ -1,4 +1,4 @@
-import "./home.css";
+import "../styles/home.css";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
@@ -16,40 +16,40 @@ export const Home = () => {
       </div>
 
       <div>
-        <div class="hero-section">
-          <div class="image-container">
+        <div className="hero-section">
+          <div className="image-container">
             <a href="#">
-              <img src="img\fender.png" class="overlay" alt="" />
+              <img src="img\fender.png" className="overlay" alt="" />
             </a>
           </div>
 
-          <div class="image-container">
+          <div className="image-container">
             <a href="#">
-              <img src="img\shure.jpg" class="overlay" alt="" />
+              <img src="img\shure.jpg" className="overlay" alt="" />
             </a>
           </div>
 
-          <div class="image-container">
+          <div className="image-container">
             <a href="#">
-              <img src="img\ibanez.png" class="overlay" alt="" />
+              <img src="img\ibanez.png" className="overlay" alt="" />
             </a>
           </div>
 
-          <div class="image-container">
-            <a href="#" class="i">
-              <img src="img\marshall.jpg" class="overlay" alt="" />
+          <div className="image-container">
+            <a href="#" className="i">
+              <img src="img\marshall.jpg" className="overlay" alt="" />
             </a>
           </div>
 
-          <div class="image-container">
-            <a href="#" class="i">
-              <img src="img\schecter.jpg" class="overlay" alt="" />
+          <div className="image-container">
+            <a href="#" className="i">
+              <img src="img\schecter.jpg" className="overlay" alt="" />
             </a>
           </div>
 
-          <div class="image-container">
-            <a href="#" class="i">
-              <img src="img\orange.png" class="overlay" alt="" />
+          <div className="image-container">
+            <a href="#" className="i">
+              <img src="img\orange.png" className="overlay" alt="" />
             </a>
           </div>
         </div>

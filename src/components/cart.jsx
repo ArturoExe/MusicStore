@@ -1,13 +1,97 @@
-import "./cart.css";
+import "../styles/cart.css";
 import Country from "./country";
 import Cartprod from "./cartprod";
-import Paybtn from "./paybtn";
-
 import { MdAlternateEmail } from "react-icons/md";
 import { BsFillCreditCard2BackFill } from "react-icons/bs";
 import { BsPerson } from "react-icons/bs";
-
+import { useContext, useEffect, useState } from "react";
+import CounterContext from "../context/CounterContext";
 export const Cart = () => {
+  const { cart, setCart, counter, setCounter } = useContext(CounterContext);
+  const [order, setOrder] = useState(null);
+  const [inputValues, setInputValues] = useState({
+    email: "",
+    cardnumber: "",
+    name: "",
+    country: "",
+    street: "",
+    state: "",
+    zipcode: "",
+  });
+
+  function getSubtotal() {
+    let total = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+      total = cart[i].price + total;
+    }
+    return total;
+  }
+
+  function getTax() {
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+      total = cart[i].price + total;
+    }
+
+    let tax = total * 0.2;
+    return tax;
+  }
+
+  function getTotal() {
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+      total = cart[i].price + total;
+    }
+
+    let tax = total * 0.2;
+
+    total = tax + total;
+    return total;
+  }
+
+  let placeOrder = async () => {
+    fetch(`/api/order/place`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      customer: JSON.stringify(order),
+    });
+  };
+
+  let handleChange = (value) => {
+    setOrder((order) => ({ ...order, customer: value }));
+    console.log("Handle Change:", order);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("local", JSON.stringify(cart));
+
+    getTotal();
+  }, [cart]);
+
+  useEffect(() => {
+    setCounter(cart.length);
+  }, [cart]);
+
+  function removeCart(id) {
+    let newArray = [...cart];
+    const index = newArray.findIndex((element) => element.id === id);
+    if (index !== -1) {
+      newArray.splice(index, 1);
+      console.log(newArray);
+      setCart(newArray);
+    }
+  }
+
+  function inputHandler(e) {
+    const { id, value } = e.target;
+    setInputValues({ ...inputValues, [id]: value });
+  }
+
+  useEffect(() => {
+    console.log(inputValues);
+  }, [inputValues]);
+
   return (
     <div className="cart-container">
       <div className="summary-container">
@@ -16,11 +100,17 @@ export const Cart = () => {
           Check your item and select your shipping for a better <br />{" "}
           experience order item
         </p>
-        <Cartprod></Cartprod>
+
+        <div>
+          {cart.map((cart, index) => (
+            <Cartprod key={index} cartprod={cart} handleRemove={removeCart} />
+          ))}
+        </div>
+
         <div className="shipping-container">
           <h2>Shipping</h2>
           <div className="normal-shipping">
-            <label for="shipping">
+            <label htmlFor="shipping">
               Normal Shipping
               <br />
               <span>2 - 3 weeks </span>
@@ -34,7 +124,7 @@ export const Cart = () => {
             />
           </div>
           <div className="fast-shipping">
-            <label for="shipping">
+            <label htmlFor="shipping">
               Fast Shipping
               <br />
               <span>1 week </span>
@@ -56,17 +146,24 @@ export const Cart = () => {
           order.
         </p>
         <form className="card-info">
-          <label for="email">Email Address</label>
+          <label htmlFor="email">Email Address</label>
           <br />
 
           <span className="at-icon">
             <MdAlternateEmail />
           </span>
-          <input className="email-input" type="text" id="email" name="email" />
+          <input
+            className="email-input"
+            type="text"
+            id="email"
+            name="email"
+            value={inputValues.email}
+            onChange={inputHandler}
+          />
           <br />
 
           <div className="card-detail">
-            <label for="card-number">Card Detail</label>
+            <label htmlFor="card-number">Card Detail</label>
             <br />
             <span className="card-icon">
               <BsFillCreditCard2BackFill />
@@ -75,8 +172,10 @@ export const Cart = () => {
               className="card-number"
               placeholder="Card Number"
               type="text"
-              id="card-number"
+              id="cardnumber"
               name="card-number"
+              value={inputValues.cardnumber}
+              onChange={inputHandler}
             />
             <input
               className="card-expdate"
@@ -87,14 +186,14 @@ export const Cart = () => {
             />
             <input
               className="card-cvc"
-              placeholder="       CVC"
+              placeholder="   CVC"
               type="text"
               id="card-cvc"
               name="card-cvc"
             />
           </div>
 
-          <label for="card-holder">Card Holder</label>
+          <label htmlFor="card-holder">Card Holder</label>
           <br />
           <span className="name-icon">
             <BsPerson />
@@ -103,36 +202,49 @@ export const Cart = () => {
             className="cardholder-input"
             placeholder="Name"
             type="text"
-            id="card-holder"
+            id="name"
             name="card-holder"
+            value={inputValues.name}
+            onChange={inputHandler}
           />
           <br />
 
           <div className="billing-adress-info">
-            <label for="billing-address">Billing Address</label>
+            <label htmlFor="billing-address">Billing Address</label>
             <br />
-            <Country></Country>
+
+            <Country
+              updateCountry={inputHandler}
+              inputValues={inputValues}
+            ></Country>
+
             <input
               className="billing-address"
               placeholder="Street"
               type="text"
-              id="billing-address"
+              id="street"
               name="billing-address"
+              value={setInputValues.street}
+              onChange={inputHandler}
             />
             <br />
             <input
               className="billing-state"
               placeholder="State"
               type="text"
-              id="billing-address"
+              id="state"
               name="billing-address"
+              value={inputValues.state}
+              onChange={inputHandler}
             />
             <input
               className="billing-zipcode"
               placeholder="Zip Code"
               type="text"
-              id="billing-address"
+              id="zipcode"
               name="billing-address"
+              value={inputValues.zipcode}
+              onChange={inputHandler}
             />
           </div>
         </form>
@@ -142,11 +254,11 @@ export const Cart = () => {
           <h4>Total</h4>
         </div>
         <div className="totals-res">
-          <h4>$ 1000</h4>
-          <h4>$ 200</h4>
-          <h4>$ 1200</h4>
+          <h4>$ {getSubtotal()}</h4>
+          <h4>$ {getTax()}</h4>
+          <h4>$ {getTotal()}</h4>
         </div>
-        <Paybtn></Paybtn>
+        <button className="button-80">Pay ${getTotal()}</button>
       </div>
     </div>
   );

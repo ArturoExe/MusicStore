@@ -1,10 +1,21 @@
-import "./country.css";
-import React from 'react'; 
-import CountryDropdown from 'country-dropdown-with-flags-for-react';
+import "../styles/country.css";
+import React from "react";
+import CountryDropdown from "country-dropdown-with-flags-for-react";
 
-export const Country = () => {
+export const Country = ({ updateCountry, inputValues }) => {
+  function handleUpdate(e) {
+    updateCountry(e);
+    console.log("Some text");
+  }
+
   return (
-      <CountryDropdown  id="country-id" className='country' preferredCountries={['gb', 'us']}  value="" handleChange={e => console.log(e.target.value)}></CountryDropdown>
+    <CountryDropdown
+      id="country"
+      className="country"
+      preferredCountries={["gb", "us"]}
+      value={inputValues.country}
+      handleChange={handleUpdate}
+    ></CountryDropdown>
   );
 };
 

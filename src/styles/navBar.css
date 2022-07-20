@@ -46,3 +46,8 @@ i {
 .red-letters {
   color: red;
 }
+
+.cart-icon {
+  font-size: 20px;
+  transform: translate(-30%, 25%);
+}
