@@ -8,6 +8,7 @@ import AuthContext from "../context/AuthContext";
 const NavBar = () => {
   const { counter } = useContext(CounterContext);
   const { user } = useContext(AuthContext);
+
   function handleNavBar() {
     if (user) {
       return (

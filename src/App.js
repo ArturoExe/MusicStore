@@ -18,10 +18,29 @@ import { AuthProvider } from "./context/AuthContext";
 function App() {
   const [counter, setCounter] = useState();
   const [cart, setCart] = useState([]);
+  const [inputValues, setInputValues] = useState({
+    email: "",
+    cardnumber: "",
+    phone: "",
+    name: "",
+    country: "",
+    street: "",
+    state: "",
+    zipcode: "",
+  });
 
   return (
     <div className="App">
-      <CounterContext.Provider value={{ counter, setCounter, cart, setCart }}>
+      <CounterContext.Provider
+        value={{
+          counter,
+          setCounter,
+          cart,
+          setCart,
+          inputValues,
+          setInputValues,
+        }}
+      >
         <BrowserRouter>
           <AuthProvider>
             <NavBar />
@@ -38,6 +57,7 @@ function App() {
                   </PrivateRoutes>
                 }
               />
+
               <Route
                 path="/catalog"
                 element={
@@ -54,7 +74,25 @@ function App() {
                     <Profile />
                   </PrivateRoutes>
                 }
-              />
+              >
+                <Route
+                  path="details"
+                  element={
+                    <PrivateRoutes>
+                      <ProfileDetails />
+                    </PrivateRoutes>
+                  }
+                />
+
+                <Route
+                  path="orders"
+                  element={
+                    <PrivateRoutes>
+                      <Orders />
+                    </PrivateRoutes>
+                  }
+                />
+              </Route>
             </Routes>
           </AuthProvider>
         </BrowserRouter>

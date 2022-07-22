@@ -6,18 +6,12 @@ import { BsFillCreditCard2BackFill } from "react-icons/bs";
 import { BsPerson } from "react-icons/bs";
 import { useContext, useEffect, useState } from "react";
 import CounterContext from "../context/CounterContext";
+import AuthContext from "../context/AuthContext";
 export const Cart = () => {
-  const { cart, setCart, counter, setCounter } = useContext(CounterContext);
+  const { cart, setCart, setCounter, setInputValues, inputValues } =
+    useContext(CounterContext);
   const [order, setOrder] = useState(null);
-  const [inputValues, setInputValues] = useState({
-    email: "",
-    cardnumber: "",
-    name: "",
-    country: "",
-    street: "",
-    state: "",
-    zipcode: "",
-  });
+  const { placeOrder, setCustomer } = useContext(AuthContext);
 
   function getSubtotal() {
     let total = 0;
@@ -49,14 +43,6 @@ export const Cart = () => {
     total = tax + total;
     return total;
   }
-
-  let placeOrder = async () => {
-    fetch(`/api/order/place`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      customer: JSON.stringify(order),
-    });
-  };
 
   let handleChange = (value) => {
     setOrder((order) => ({ ...order, customer: value }));
@@ -145,7 +131,7 @@ export const Cart = () => {
           Complete your purchase by providing your payment <br /> detailers
           order.
         </p>
-        <form className="card-info">
+        <form onSubmit={placeOrder}>
           <label htmlFor="email">Email Address</label>
           <br />
 
@@ -247,6 +233,10 @@ export const Cart = () => {
               onChange={inputHandler}
             />
           </div>
+
+          <button className="button-80" type="submit">
+            Pay ${getTotal()}
+          </button>
         </form>
         <div className="totals-text">
           <h4>Subtotal</h4>
@@ -258,7 +248,6 @@ export const Cart = () => {
           <h4>$ {getTax()}</h4>
           <h4>$ {getTotal()}</h4>
         </div>
-        <button className="button-80">Pay ${getTotal()}</button>
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import CounterContext from "./CounterContext";
 
 const AuthContext = createContext(null);
 export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
+  const { inputValues } = useContext(CounterContext);
+
   const history = useNavigate();
   let [loading, setLoading] = useState();
 
@@ -24,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   let loginUser = async (e) => {
     e.preventDefault();
     console.log("form sent");
-    let response = await fetch(`http://127.0.0.1:8000/api/token/`, {
+    let response = await fetch(`/api/token/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -74,11 +77,56 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  let placeOrder = async (e) => {
+    e.preventDefault();
+    console.log("Order Placed");
+    let response = await fetch(`/api/place_order`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: null,
+        date: null,
+        status: "Out for delivery",
+        note: "Default note",
+        customer: user.user_id,
+        product: 1,
+      }),
+    });
+
+    setCustomer();
+    let data = await response.json();
+    console.log(data);
+  };
+
+  let setCustomer = async () => {
+    console.log("Customer Set");
+    let response = await fetch(`/api/customers/set`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: null,
+        phone: "12321312412",
+        email: inputValues.email,
+        country: inputValues.country,
+        street: inputValues.street,
+        state: inputValues.state,
+        zipcode: 92173.0,
+        cartNumber: inputValues.cartnumber,
+        date_created_on: null,
+        name: user.user_id,
+      }),
+    });
+
+    let data = await response.json();
+    console.log("Customer", data);
+  };
+
   let contextData = {
     user: user,
     loginUser: loginUser,
     logoutUser: logoutUser,
     authTokens: authTokens,
+    placeOrder: placeOrder,
   };
 
   useEffect(() => {

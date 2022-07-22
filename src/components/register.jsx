@@ -1,22 +1,61 @@
+import { useState, useEffect } from "react";
 import "../styles/register.css";
 
 export const Register = () => {
+  const [inputValues, setInputValues] = useState({
+    username: "",
+    password: "",
+  });
+
+  function inputHandle(e) {
+    const { id, value } = e.target;
+    setInputValues({ ...inputValues, [id]: value });
+  }
+
+  useEffect(() => {
+    console.log(inputValues);
+  }, [inputValues]);
+
+  let registerUser = async () => {
+    let response = await fetch(`/api/register/`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: inputValues.username,
+        password: inputValues.password,
+      }),
+    });
+    let data = response.json();
+    console.log(data);
+  };
+
   return (
     <div className="register-container">
       <h4>REGISTER</h4>
-      <form action="">
-        <input type="text" name="firstName" id="" placeholder="First Name" />
+      <form onSubmit={registerUser}>
+        <input
+          type="text"
+          id="username"
+          placeholder="First Name"
+          onChange={inputHandle}
+          value={inputValues.username}
+        />
         <br />
-        <input type="text" name="lastName" id="" placeholder="Last Name" />
+        <input type="text" name="lastName" placeholder="Last Name" />
         <br />
-        <input type="text" name="email" id="" placeholder="Email" />
+        <input type="text" name="email" placeholder="Email" />
         <br />
-        <input type="text" name="password" id="" placeholder="Password" />
+        <input
+          type="text"
+          id="password"
+          placeholder="Password"
+          onChange={inputHandle}
+          value={inputValues.password}
+        />
         <br />
         <input
           type="text"
           name="confirmPassword"
-          id=""
           placeholder="Confirm Password"
         />
         <br />
