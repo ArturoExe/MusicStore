@@ -7,6 +7,7 @@ import { BsPerson } from "react-icons/bs";
 import { useContext, useEffect, useState } from "react";
 import CounterContext from "../context/CounterContext";
 import AuthContext from "../context/AuthContext";
+
 export const Cart = () => {
   const { cart, setCart, setCounter, setInputValues, inputValues } =
     useContext(CounterContext);

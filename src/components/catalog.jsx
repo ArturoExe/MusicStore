@@ -4,7 +4,7 @@ import Catalogprod from "./catalogprod";
 import CounterContext from "../context/CounterContext";
 
 const Catalog = () => {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState([]); //Catalog array
   const [incart, setIncart] = useState(() => handleLocalData());
   const { setCounter, setCart } = useContext(CounterContext);
 

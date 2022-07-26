@@ -1,27 +1,22 @@
 import "../styles/orderdetail.css";
 
-export const Orderdetail = () => {
+export const Orderdetail = ({ order }) => {
   return (
     <div className="orders-container">
       <div className="orders-status">
         <div className="order-info">
-          <h3>Rickenbacker 4001</h3>
-          <h5>Total: $2200</h5>
+          <h3>Order ID: {order.id}</h3>
+          <h5>Note: {order.note}</h5>
         </div>
-        <img src="img/rickenbacker.jpg" alt="Rickenbacker 4001" />
       </div>
 
       <div className="delivery-status-options">
         <div className="delivery-status">
-          <p>Delivery status: </p>
-          <p>ETA</p>
+          <p>Delivery status: {order.status}</p>
+          <p>Order placed on {order.date_created_on}</p>
         </div>
 
-        <div className="order-options">
-          <button>View status</button>
-          <button>Return order</button>
-          <button>Write a review</button>
-        </div>
+        <div className="order-options"></div>
       </div>
     </div>
   );

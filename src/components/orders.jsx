@@ -1,7 +1,32 @@
 import "../styles/orders.css";
 import Orderdetail from "./orderdetail";
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
 
 export const Orders = () => {
+  let { authTokens } = useContext(AuthContext);
+
+  let [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    getOrders();
+  }, []);
+
+  let getOrders = async () => {
+    let response = await fetch("/api/cart/", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + String(authTokens.access),
+      },
+    });
+
+    let data = await response.json();
+    console.log("The array is ", data);
+    setOrders(data);
+  };
+
   return (
     <div className="filter-container">
       <form action="#">
@@ -19,7 +44,11 @@ export const Orders = () => {
         </select>
       </form>
 
-      <Orderdetail></Orderdetail>
+      <div>
+        {orders.map((order) => (
+          <Orderdetail key={order.id} order={order} />
+        ))}
+      </div>
     </div>
   );
 };

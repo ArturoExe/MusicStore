@@ -93,9 +93,8 @@ export const AuthProvider = ({ children }) => {
       }),
     });
 
-    setCustomer();
     let data = await response.json();
-    console.log(data);
+    console.log("Order is ", data);
   };
 
   let setCustomer = async () => {
@@ -117,6 +116,7 @@ export const AuthProvider = ({ children }) => {
       }),
     });
 
+    placeOrder();
     let data = await response.json();
     console.log("Customer", data);
   };

@@ -5,5 +5,5 @@ export { default as Catalog } from "../components/catalog";
 export { default as Login } from "../components/login";
 export { default as Register } from "../components/register";
 export { default as Profile } from "../components/profile";
-export { default as ProfileDetails } from "../components/profile_details";
 export { default as Orders } from "../components/orders";
+export { default as Details } from "../components/details";

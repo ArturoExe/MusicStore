@@ -13,7 +13,7 @@ const NavBar = () => {
     if (user) {
       return (
         <>
-          <Link to="/profile">profile</Link>
+          <Link to="/profile/details">profile</Link>
 
           <Link to="/catalog">Catalog</Link>
 

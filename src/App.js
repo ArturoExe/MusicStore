@@ -7,9 +7,10 @@ import {
   Login,
   Register,
   Profile,
-  ProfileDetails,
+  Details,
   Orders,
 } from "./utils/components";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import CounterContext from "./context/CounterContext";
@@ -79,7 +80,7 @@ function App() {
                   path="details"
                   element={
                     <PrivateRoutes>
-                      <ProfileDetails />
+                      <Details />
                     </PrivateRoutes>
                   }
                 />
