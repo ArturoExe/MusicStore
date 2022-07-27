@@ -5,9 +5,19 @@ import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 
 export const Orders = () => {
-  let { authTokens } = useContext(AuthContext);
+  let { authTokens, user } = useContext(AuthContext);
 
   let [orders, setOrders] = useState([]);
+  let [userOrders, setUserOrders] = useState([]);
+
+  function loadUserOrders() {
+    setUserOrders(orders.filter((order) => order.customer === user.user_id));
+  }
+
+  useEffect(() => {
+    loadUserOrders();
+    console.log("Your orders:", userOrders);
+  }, [orders]);
 
   useEffect(() => {
     getOrders();
@@ -45,7 +55,7 @@ export const Orders = () => {
       </form>
 
       <div>
-        {orders.map((order) => (
+        {userOrders.map((order) => (
           <Orderdetail key={order.id} order={order} />
         ))}
       </div>
