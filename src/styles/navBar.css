@@ -1,0 +1,53 @@
+/* NAVIGATION AREA */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #152238;
+  height: 50px;
+  padding: 0.5rem;
+}
+
+nav > div > a {
+  margin: 1rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+nav > div > a:hover {
+  font-weight: 600;
+}
+
+nav > div > input[type="text"] {
+  padding: 6px;
+  border: none;
+  border-bottom: 2px solid white;
+  font-size: 17px;
+  width: 40vw;
+  background-color: #152238;
+  color: white;
+}
+
+nav > div > input[type="text"]:focus {
+  outline: none;
+  transform: scale(1.1);
+}
+
+i {
+  color: white;
+}
+
+.hamburguer-menu {
+  display: none;
+}
+
+.red-letters {
+  color: red;
+}
+
+.cart-icon {
+  font-size: 20px;
+  transform: translate(-30%, 25%);
+}

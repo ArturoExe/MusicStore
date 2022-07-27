@@ -1,0 +1,178 @@
+.hero-container {
+  overflow: hidden;
+  background-color: aqua;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+}
+
+.hero-container h2 {
+  color: aliceblue;
+  font-size: 6rem;
+  position: absolute;
+  z-index: 11;
+  top: 20%;
+  left: 35%;
+}
+
+.hero-container h4 {
+  color: aliceblue;
+  font-size: 2rem;
+  position: absolute;
+  z-index: 100;
+  top: 45%;
+  left: 36%;
+}
+.hero-image {
+  width: 100%;
+  transform: translateY(-20%);
+}
+/* HERO SECTION */
+h1 {
+  text-align: center;
+  margin: 3rem 0;
+}
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-section div {
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay:hover {
+  opacity: 0.7;
+}
+.hero-section img {
+  height: 100%;
+  width: auto;
+}
+
+.hero-section div {
+  width: 400px;
+}
+
+.hero-button {
+  width: 200px;
+  height: 50px;
+  font-weight: 800;
+  color: aliceblue;
+  letter-spacing: 3px;
+  background-color: transparent;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 20rem;
+  position: absolute;
+  z-index: 10;
+  top: 55%;
+  left: 60%;
+}
+
+.hero-button:hover {
+  color: black;
+  background-color: white;
+}
+
+.about-us-container {
+  margin-top: 10rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-us-back {
+  object-fit: cover;
+  height: 50%;
+  width: auto;
+}
+
+.about-us-info {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  display: flex;
+}
+
+.about-us-info img {
+  width: 30%;
+  height: auto;
+  margin: 4rem;
+}
+
+.about-us-info {
+  text-align: justify;
+  color: white;
+  font-size: 2rem;
+  padding: 4rem;
+}
+
+.darkner {
+  filter: invert(0%) sepia(1%) saturate(50%) hue-rotate(335deg) brightness(55%)
+    contrast(200%);
+}
+
+.footer-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 10%;
+  background-color: #152238;
+  color: white;
+}
+
+.footer-categories ul {
+  list-style: none;
+}
+
+.footer-categories li {
+  text-align: left;
+  margin: 6px;
+}
+
+.footer-intouch {
+  width: 33%;
+}
+
+.footer-intouch p {
+  text-align: justify;
+  margin: 0;
+}
+
+.footer-controller {
+  margin: 50px 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-controller input {
+  border: none;
+  background-color: transparent;
+  width: 120%;
+  height: 30px;
+  color: white;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.footer-controller button {
+  margin: 20px 0px;
+  border-radius: 3em;
+  height: 40px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.footer-controller button:hover {
+  color: white;
+  background-color: black;
+}
+
+.rights {
+  background-color: #152238;
+  color: white;
+  display: inline-block;
+  width: 100%;
+}
