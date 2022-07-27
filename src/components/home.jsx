@@ -4,17 +4,15 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   return (
     <div>
-      <div>
-        <div className="hero-container">
-          <Link to="/register">
-            <button className="hero-button">Get Involved</button>
-          </Link>
-          <h2>Music Center</h2>
-          <h4>The real deal</h4>
-          <img src="../img/about.jpg" className="hero-image" alt=""></img>
-        </div>
-      </div>
+      {/* Hero Banner */}
+      <div className="hero-container">
+        <Link to="/login">
+          <button className="hero-button">Get Involved!</button>
+        </Link>
 
+        <h2>Music Center</h2>
+        <h4>The real deal</h4>
+      </div>
       <div>
         <div className="hero-section">
           <div className="image-container">
@@ -63,15 +61,25 @@ export const Home = () => {
         />
 
         <div className="about-us-info">
-          <img src="./img/girl-guitar.jpg" alt=""></img>
-
+          <img src="./img/girl-guitar.jpg"></img>
           <div>
             <h4>About Us</h4>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
-              eveniet molestias nostrum sit recusandae vero cupiditate atque
-              laudantium, explicabo amet culpa eligendi fugit facere repellat.
-              Aspernatur rerum et commodi. Harum.40
+              Music Center is a company specialized in the sale of musical
+              instruments, audio and professional lighting and currently has 10
+              branches nationwide. Consolidated company for more than 7 months
+              has innovated and provided professional services to musicians,
+              institutions and entertainment companies. <br />
+              <br />
+              Music Center is a specialized company, which sells musical
+              instruments, professional audio and lighting. Currently It has 10
+              stores and more than 30 years of experience providing professional
+              and innovative services to musicians, institutes, colleges and
+              companies. <br />
+              <br />
+              Since 2022, Music Center has been recognized by famous magazines
+              as one of the top five best chain stores of Musical Instruments
+              and Professional Audio in Latin America.
             </p>
           </div>
         </div>

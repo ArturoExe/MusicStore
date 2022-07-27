@@ -1,56 +1,56 @@
-.cart-items-container{
-    border: 1px solid rgb(181, 181, 181);
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
+.cart-items-container {
+  border: 1px solid rgb(181, 181, 181);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 575px;
-    height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 575px;
+  height: 200px;
 
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 
-    text-align: right;
+  text-align: right;
 }
-.cart-items-container h5{
-    margin-right: 15px;
+.cart-items-container h5 {
+  margin-right: 15px;
 }
-.cart-items-container h4{
-    margin-right: 170px;
+.cart-items-container h4 {
+  margin-right: 170px;
 }
-.cart-items-container button{
-    margin-top: 10px;
-    margin-right: 155px;
-    background-color: red;
-    border-style: hidden;
-    color: white;
-    padding: 5px;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
+.cart-items-container button {
+  margin-top: 10px;
+  margin-right: 155px;
+  background-color: red;
+  border-style: hidden;
+  color: white;
+  padding: 5px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
-.cart-items-container button:hover{
-    cursor: pointer;
-    background-color: white;
-    color: red;
+.cart-items-container button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: red;
 }
-.cart-items-container img{
-    float: left;
-    display: block;
-    margin-left: 15px;
-    margin-top: 15px;
+.cart-items-container img {
+  float: left;
+  display: block;
+  margin-left: 15px;
+  margin-top: 15px;
 
-    border: 1px solid rgb(181, 181, 181);
-    border-radius: 12px;
-    box-sizing: border-box;
-    height: 162px;
-    width: 162px;
+  border: 1px solid rgb(181, 181, 181);
+  border-radius: 12px;
+  box-sizing: border-box;
+  height: 162px;
+  width: 162px;
 }
