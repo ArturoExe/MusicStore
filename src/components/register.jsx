@@ -55,6 +55,8 @@ export const Register = () => {
       case "password":
         if (!value) {
           stateObj[id] = "Please enter Password.";
+        } else if (inputValues.password.length < 7) {
+          stateObj[id] = "Password must be at least 8 characters long.";
         } else if (inputValues.confirmPassword && value !== inputValues.confirmPassword) {
           stateObj["confirmPassword"] = "Password and Confirm Password does not match.";
         } else {

@@ -16,9 +16,6 @@ const Login = () => {
           <input type="password" name="password" placeholder="Enter Password" />
           <br />
           <div className="login">
-            <a href="" className="forgotPassword">
-              Forgot password?
-            </a>
           </div>
           <br />
           <Link to="/register" className="createAccount">
