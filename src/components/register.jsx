@@ -3,12 +3,17 @@ import "../styles/register.css";
 
 export const Register = () => {
   const [inputValues, setInputValues] = useState({
-    username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
     password: "",
     confirmPassword: ""
   });
 
   const [error, setError] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
     username: "",
     password: "",
     confirmPassword: ""
@@ -29,9 +34,21 @@ export const Register = () => {
     const stateObj = { ...prev, [id]: "" };
 
     switch (id) {
-      case "username":
+      case "firstName":
         if (!value) {
-          stateObj[id] = "Please enter Username.";
+          stateObj[id] = "Please enter your first name.";
+        }
+        break;
+
+      case "lastName":
+          if (!value) {
+            stateObj[id] = "Please enter your last name.";
+          }
+          break;
+
+      case "email":
+        if (!value) {
+          stateObj[id] = "Please enter your email.";
         }
         break;
 
@@ -43,6 +60,7 @@ export const Register = () => {
         } else {
           stateObj["confirmPassword"] = inputValues.confirmPassword ? "" : error.confirmPassword;
         }
+        
         break;
 
       case "confirmPassword":
@@ -84,38 +102,51 @@ export const Register = () => {
       <form onSubmit={registerUser}>
         <input
           type="text"
-          id="username"
+          id="firstName"
           placeholder="First Name"
-          onChange={inputHandle}
           value={inputValues.username}
+          onChange={inputHandle}
+          onBlur={validateInput}
         />
+        {error.firstName && <span className='err'>{error.firstName}</span>}
         <br />
         <input 
           type="text" 
-          name="lastName" 
-          placeholder="Last Name" />
+          id="lastName" 
+          placeholder="Last Name"
+          onChange={inputHandle}
+          onBlur={validateInput}
+          value={inputValues.lastName} />
+        {error.lastName && <span className='err'>{error.lastName}</span>}
         <br />
         <input 
           type="text" 
-          name="email" 
-          placeholder="Email" />
+          id="email" 
+          placeholder="Email"
+          onChange={inputHandle}
+          onBlur={validateInput}
+          value={inputValues.email} />
+        {error.email && <span className='err'>{error.email}</span>}
         <br />
         <input
-          type="text"
+          type="password"
           id="password"
           placeholder="Password"
           onChange={inputHandle}
           value={inputValues.password}
-          onBlur={validateInput}/>
+          onBlur={validateInput}
+          minlength="8" 
+          required/>
         {error.password && <span className='err'>{error.password}</span>}
         <br />
         <input
-          type="text"
+          type="password"
           id="confirmPassword"
           placeholder="Confirm Password"
           onChange={inputHandle}
           value={inputValues.confirmPassword}
           onBlur={validateInput}
+          minlength="8" 
         />
         {error.confirmPassword && <span className='err'>{error.confirmPassword}</span>}
         <br />

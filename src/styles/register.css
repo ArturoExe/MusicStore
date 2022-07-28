@@ -16,7 +16,7 @@
   display: inline-block;
 }
 
-.register-container input[type="text"] {
+.register-container input[type="password"] {
   background: transparent;
   border: none;
   border-bottom: 3px #4e4e4e solid;
