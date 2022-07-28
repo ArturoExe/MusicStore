@@ -1,0 +1,56 @@
+.vertical-div {
+    border-right: 2px solid gray;
+    width: 25%;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.75) inset;
+}
+
+.vertical-div p{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.profile-pic{
+    vertical-align: middle;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: solid black;
+}
+
+.Profile{
+    margin-top: 70px;
+}
+
+.Options{
+    margin-top: 50%;
+    font-size: 20px;
+}
+
+.Options img{
+    height: 25px;
+    width: 25px;
+}
+
+.profile-container a{
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+.my-details{
+    margin: 50px;
+}
+
+.my-orders{
+    margin: 50px;
+}
+
+.account-settings{
+    margin: 50px;
+}
+
+.profile-container{
+    display: flex;
+}
