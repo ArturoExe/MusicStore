@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import "../styles/register.css";
 
 export const Register = () => {
+
+  const [isValidated, setIsValidated] = useState(false)
+
   const [inputValues, setInputValues] = useState({
     firstName: "",
     lastName: "",
@@ -74,6 +77,7 @@ export const Register = () => {
         break;
 
       default:
+        return setIsValidated(true)
         break;
     }
 
@@ -86,16 +90,21 @@ export const Register = () => {
   }, [inputValues]);
 
   let registerUser = async () => {
-    let response = await fetch(`/api/register/`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: inputValues.username,
-        password: inputValues.password,
-      }),
-    });
-    let data = response.json();
-    console.log(data);
+    if(isValidated == true){
+      let response = await fetch(`/api/register/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: inputValues.username,
+          password: inputValues.password,
+        }),
+      });
+      let data = response.json();
+      console.log(data);
+    }
+    else{
+      alert("Some inputs are incorrect.");
+    }
   };
 
   return (
