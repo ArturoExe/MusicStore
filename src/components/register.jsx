@@ -5,12 +5,67 @@ export const Register = () => {
   const [inputValues, setInputValues] = useState({
     username: "",
     password: "",
+    confirmPassword: "",
+  });
+
+  const [error, setError] = useState({
+    username: "",
+    password: "",
+    confirmPassword: "",
   });
 
   function inputHandle(e) {
     const { id, value } = e.target;
-    setInputValues({ ...inputValues, [id]: value });
+    setInputValues((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+    validateInput(e);
   }
+
+  const validateInput = (e) => {
+    let { id, value } = e.target;
+    setError((prev) => {
+      const stateObj = { ...prev, [id]: "" };
+
+      switch (id) {
+        case "username":
+          if (!value) {
+            stateObj[id] = "Please enter Username.";
+          }
+          break;
+
+        case "password":
+          if (!value) {
+            stateObj[id] = "Please enter Password.";
+          } else if (
+            inputValues.confirmPassword &&
+            value !== inputValues.confirmPassword
+          ) {
+            stateObj["confirmPassword"] =
+              "Password and Confirm Password does not match.";
+          } else {
+            stateObj["confirmPassword"] = inputValues.confirmPassword
+              ? ""
+              : error.confirmPassword;
+          }
+          break;
+
+        case "confirmPassword":
+          if (!value) {
+            stateObj[id] = "Please enter Confirm Password.";
+          } else if (inputValues.password && value !== inputValues.password) {
+            stateObj[id] = "Password and Confirm Password does not match.";
+          }
+          break;
+
+        default:
+          break;
+      }
+
+      return stateObj;
+    });
+  };
 
   useEffect(() => {
     console.log(inputValues);
@@ -46,18 +101,26 @@ export const Register = () => {
         <input type="text" name="email" placeholder="Email" />
         <br />
         <input
-          type="text"
+          type="password"
           id="password"
           placeholder="Password"
           onChange={inputHandle}
           value={inputValues.password}
+          onBlur={validateInput}
         />
+        {error.password && <span className="err">{error.password}</span>}
         <br />
         <input
-          type="text"
-          name="confirmPassword"
+          type="password"
+          id="confirmPassword"
           placeholder="Confirm Password"
+          onChange={inputHandle}
+          value={inputValues.confirmPassword}
+          onBlur={validateInput}
         />
+        {error.confirmPassword && (
+          <span className="err">{error.confirmPassword}</span>
+        )}
         <br />
         <button className="btn-register">Register</button>
       </form>

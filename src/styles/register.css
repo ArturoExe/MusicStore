@@ -26,6 +26,16 @@
   letter-spacing: 3px;
 }
 
+.register-container input[type="password"] {
+  background: transparent;
+  border: none;
+  border-bottom: 3px #4e4e4e solid;
+  margin: 20px;
+  width: 300px;
+  font-size: large;
+  letter-spacing: 3px;
+}
+
 .register-container body {
   text-align: center;
 }
@@ -49,4 +59,9 @@
 .register-container {
   margin-top: 80px;
   margin-bottom: 80px;
+}
+
+.err {
+  display: flex;
+  flex-direction: column;
 }
