@@ -28,6 +28,7 @@ function App() {
     street: "",
     state: "",
     zipcode: "",
+    note: "",
   });
 
   return (

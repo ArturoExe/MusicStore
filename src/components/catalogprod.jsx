@@ -8,10 +8,11 @@ export const Catalogprod = ({ product, handleCart }) => {
   return (
     <div className="catalog-prod-container">
       <img src={product.image_url} alt="Epiphone 340v" />
-      <h5>{product.name}</h5>
+      <h3>{product.name}</h3>
       <h4> Price ${product.price}</h4>
+      <h5>{product.description}</h5>
       <Rating></Rating>
-      <button onClick={handleValue}>Add to Cart</button> <button>See</button>
+      <button onClick={handleValue}>Add to Cart</button>
     </div>
   );
 };

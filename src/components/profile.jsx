@@ -4,8 +4,7 @@ import { Outlet, useNavigate } from "react-router";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 export const Profile = () => {
-  let { authTokens, logoutUser } = useContext(AuthContext);
-
+  let { authTokens, logoutUser, user } = useContext(AuthContext);
   return (
     <div className="profile-container">
       <div className="vertical-div">
@@ -15,7 +14,7 @@ export const Profile = () => {
             alt="Profile Picture"
             className="profile-pic"
           ></img> */}
-          <p>Username</p>
+          <p>You are logged in {user.username}</p>
         </div>
         <div className="Options">
           <div className="my-details">

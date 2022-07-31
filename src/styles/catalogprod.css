@@ -19,19 +19,23 @@
   text-align: right;
 }
 .catalog-prod-container h5 {
-  margin-top: 30px;
-  margin-right: 130px;
+  margin: 2em;
 }
 .catalog-prod-container h4 {
-  margin-right: 100px;
+  margin: 10px;
   color: #8b8b8b;
+}
+
+.catalog-prod-container h3 {
+  margin: 10px;
+  color: #000000;
 }
 .catalog-prod-container button {
   height: 40px;
   width: 130px;
   background: #006db9;
   border-style: hidden;
-  margin-right: 2px;
+  margin-right: 20px;
   border-radius: 15px;
 
   color: white;

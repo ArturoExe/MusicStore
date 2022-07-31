@@ -95,6 +95,7 @@ export const AuthProvider = ({ children }) => {
 
     let data = await response.json();
     console.log("Order is ", data);
+    alert("Order Placed");
   };
 
   let setCustomer = async () => {
@@ -104,12 +105,12 @@ export const AuthProvider = ({ children }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         id: null,
-        phone: "12321312412",
+        phone: inputValues.phone,
         email: inputValues.email,
         country: inputValues.country,
         street: inputValues.street,
         state: inputValues.state,
-        zipcode: 92173.0,
+        zipcode: parseInt(inputValues.zipcode),
         cartNumber: inputValues.cartnumber,
         date_created_on: null,
         name: user.user_id,

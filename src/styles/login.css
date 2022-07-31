@@ -20,7 +20,7 @@
   letter-spacing: 2px;
 }
 
-.login-container input[type="text"] {
+.login-container input[type="password"] {
   background: transparent;
   border: none;
   border-bottom: 3px #4e4e4e solid;

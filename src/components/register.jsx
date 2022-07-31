@@ -2,13 +2,20 @@ import { useState, useEffect } from "react";
 import "../styles/register.css";
 
 export const Register = () => {
+  const [isValidated, setIsValidated] = useState(false);
+
   const [inputValues, setInputValues] = useState({
-    username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
     password: "",
     confirmPassword: "",
   });
 
   const [error, setError] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
     username: "",
     password: "",
     confirmPassword: "",
@@ -29,15 +36,29 @@ export const Register = () => {
       const stateObj = { ...prev, [id]: "" };
 
       switch (id) {
-        case "username":
+        case "firstName":
           if (!value) {
-            stateObj[id] = "Please enter Username.";
+            stateObj[id] = "Please enter your first name.";
+          }
+          break;
+
+        case "lastName":
+          if (!value) {
+            stateObj[id] = "Please enter your last name.";
+          }
+          break;
+
+        case "email":
+          if (!value) {
+            stateObj[id] = "Please enter your email.";
           }
           break;
 
         case "password":
           if (!value) {
             stateObj[id] = "Please enter Password.";
+          } else if (inputValues.password.length < 7) {
+            stateObj[id] = "Password must be at least 8 characters long.";
           } else if (
             inputValues.confirmPassword &&
             value !== inputValues.confirmPassword
@@ -49,6 +70,7 @@ export const Register = () => {
               ? ""
               : error.confirmPassword;
           }
+
           break;
 
         case "confirmPassword":
@@ -60,6 +82,7 @@ export const Register = () => {
           break;
 
         default:
+          return setIsValidated(true);
           break;
       }
 
@@ -72,16 +95,20 @@ export const Register = () => {
   }, [inputValues]);
 
   let registerUser = async () => {
-    let response = await fetch(`/api/register/`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: inputValues.username,
-        password: inputValues.password,
-      }),
-    });
-    let data = response.json();
-    console.log(data);
+    if (isValidated == true) {
+      let response = await fetch(`/api/register/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: inputValues.username,
+          password: inputValues.password,
+        }),
+      });
+      let data = response.json();
+      console.log(data);
+    } else {
+      alert("Some inputs are incorrect.");
+    }
   };
 
   return (
@@ -90,15 +117,33 @@ export const Register = () => {
       <form onSubmit={registerUser}>
         <input
           type="text"
-          id="username"
+          id="firstName"
           placeholder="First Name"
-          onChange={inputHandle}
           value={inputValues.username}
+          onChange={inputHandle}
+          onBlur={validateInput}
         />
+        {error.firstName && <span className="err">{error.firstName}</span>}
         <br />
-        <input type="text" name="lastName" placeholder="Last Name" />
+        <input
+          type="text"
+          id="lastName"
+          placeholder="Last Name"
+          onChange={inputHandle}
+          onBlur={validateInput}
+          value={inputValues.lastName}
+        />
+        {error.lastName && <span className="err">{error.lastName}</span>}
         <br />
-        <input type="text" name="email" placeholder="Email" />
+        <input
+          type="text"
+          id="email"
+          placeholder="Email"
+          onChange={inputHandle}
+          onBlur={validateInput}
+          value={inputValues.email}
+        />
+        {error.email && <span className="err">{error.email}</span>}
         <br />
         <input
           type="password"
@@ -107,6 +152,8 @@ export const Register = () => {
           onChange={inputHandle}
           value={inputValues.password}
           onBlur={validateInput}
+          minlength="8"
+          required
         />
         {error.password && <span className="err">{error.password}</span>}
         <br />
@@ -117,6 +164,7 @@ export const Register = () => {
           onChange={inputHandle}
           value={inputValues.confirmPassword}
           onBlur={validateInput}
+          minlength="8"
         />
         {error.confirmPassword && (
           <span className="err">{error.confirmPassword}</span>

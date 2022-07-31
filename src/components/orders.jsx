@@ -54,7 +54,7 @@ export const Orders = () => {
         </select>
       </form>
 
-      <div>
+      <div className="orders-container">
         {userOrders.map((order) => (
           <Orderdetail key={order.id} order={order} />
         ))}

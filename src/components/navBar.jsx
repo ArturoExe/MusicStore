@@ -1,6 +1,8 @@
+import { useRef } from "react";
 import "../styles/navBar.css";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FaBars, FaTimes } from "react-icons/fa";
 import CounterContext from "../context/CounterContext";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
@@ -9,50 +11,58 @@ const NavBar = () => {
   const { counter } = useContext(CounterContext);
   const { user } = useContext(AuthContext);
 
+  const navRef = useRef();
+
+  const showNavBar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+  };
+
   function handleNavBar() {
     if (user) {
       return (
-        <>
-          <Link to="/profile/details">profile</Link>
-
-          <Link to="/catalog">Catalog</Link>
-
-          <Link to="/cart">
-            <AiOutlineShoppingCart className="cart-icon" />
-            {counter}
-            Cart
+        <header>
+          <Link className="logo-bar" to="/home">
+            <span className="white-letters">MUSIC</span>{" "}
+            <span className="red-letters">CENTER</span>
           </Link>
-        </>
+          <nav ref={navRef}>
+            <Link to="/profile/details">profile</Link>
+            <Link to="/catalog">Catalog</Link>
+            <Link to="/cart">
+              <AiOutlineShoppingCart className="cart-icon" />: {counter} item in
+              your Cart
+            </Link>
+            <button className="nav-btn nav-close-btn" onClick={showNavBar}>
+              <FaTimes style={{ fontSize: "3em" }} />
+            </button>
+          </nav>
+          <button className="nav-btn" onClick={showNavBar}>
+            <FaBars />
+          </button>
+        </header>
       );
     } else {
       return (
-        <>
-          <Link to="/login">Login</Link>
-        </>
+        <header>
+          <Link className="logo-bar" to="/home">
+            <span className="white-letters">MUSIC</span>{" "}
+            <span className="red-letters">CENTER</span>
+          </Link>
+          <nav ref={navRef}>
+            <Link to="/login">Login</Link>
+
+            <button className="nav-btn nav-close-btn" onClick={showNavBar}>
+              <FaTimes />
+            </button>
+          </nav>
+          <button className="nav-btn" onClick={showNavBar}>
+            <FaBars />
+          </button>
+        </header>
       );
     }
   }
-
-  return (
-    <nav>
-      <div>
-        <Link to="/home">
-          MUSIC <span className="red-letters">CENTER</span>
-        </Link>
-      </div>
-
-      <div className="hamburguer-menu">
-        <i className="fas fa-bars"></i>
-      </div>
-
-      <div className="search">
-        <i className="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search.." />
-      </div>
-
-      <div className="normal-menu">{handleNavBar()}</div>
-    </nav>
-  );
+  return <div className="normal-menu">{handleNavBar()}</div>;
 };
 
 export default NavBar;

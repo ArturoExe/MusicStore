@@ -2,7 +2,7 @@ import "../styles/orderdetail.css";
 
 export const Orderdetail = ({ order }) => {
   return (
-    <div className="orders-container">
+    <div className="order-container">
       <div className="orders-status">
         <div className="order-info">
           <h3>Order ID: {order.id}</h3>
